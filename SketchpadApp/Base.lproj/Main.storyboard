@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SketchpadApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sketchpad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivW-YH-26T">
                                         <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
-                                        <state key="normal" image="arrowLeft"/>
+                                        <state key="normal" image="undo"/>
                                         <connections>
                                             <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2bf-Yi-zEf"/>
                                         </connections>
@@ -112,7 +112,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rmZ-9A-GF7" userLabel="topButtonsStack">
-                                <rect key="frame" x="25" y="69" width="154" height="22"/>
+                                <rect key="frame" x="25" y="69" width="200" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqF-eg-P1Z">
                                         <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
@@ -132,6 +132,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgG-08-XHb">
                                         <rect key="frame" x="138" y="0.0" width="16" height="22"/>
                                         <state key="normal" image="dottedPaper"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqP-SN-7l3">
+                                        <rect key="frame" x="184" y="0.0" width="16" height="22"/>
+                                        <state key="normal" image="trash"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -166,7 +170,7 @@
         <!--Sttings View Controller-->
         <scene sceneID="gKo-dy-AIB">
             <objects>
-                <viewController id="U3O-IP-NLg" customClass="SttingsViewController" customModule="SketchpadApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="U3O-IP-NLg" customClass="SttingsViewController" customModule="Sketchpad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kZZ-Ki-cSo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -310,6 +314,8 @@
         <image name="saveFile" width="18.666666030883789" height="21.666666030883789"/>
         <image name="toggleOptions" width="25.333333969116211" height="21.333333969116211"/>
         <image name="toggleVisible" width="28.666666030883789" height="19.333333969116211"/>
+        <image name="trash" width="24.333333969116211" height="28"/>
+        <image name="undo" width="23.333333969116211" height="28.333333969116211"/>
         <image name="yellow" width="35" height="35"/>
     </resources>
 </document>

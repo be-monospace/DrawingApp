@@ -15,11 +15,16 @@ class ViewController: UIViewController {
     var lastPoint = CGPoint.zero
     var red: CGFloat = 40.0/255.0
     var green: CGFloat = 40.0/255.0
+    
     var blue : CGFloat = 40.0/255.0
     var brushWidth: CGFloat = 5.0
     
+    //var brushWidth: CGFloat = 40.0
+    var opacity: CGFloat = 1.0
+    
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var secondImage: UIImageView!
     
     
     override func viewDidLoad() {
@@ -52,6 +57,18 @@ class ViewController: UIViewController {
         if !swiped {
             drawLine(lastPoint, toPoint: lastPoint)
         }
+        
+        // new code
+        UIGraphicsBeginImageContext(secondImage.frame.size)
+        
+        imageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: 1.0)
+        secondImage.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: CGBlendMode.normal, alpha: opacity)
+        
+        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        secondImage.image = nil
+        
     }
     
     // LINE CHARACTERISTICS
@@ -60,18 +77,20 @@ class ViewController: UIViewController {
         UIGraphicsBeginImageContext(view.frame.size)
         let context = UIGraphicsGetCurrentContext()
         
-        imageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        secondImage.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         
         context?.move(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
         context?.addLine(to: CGPoint(x: fromPoint.x, y: fromPoint.y))
         
         context?.setLineCap(CGLineCap.round)
         context?.setLineWidth(brushWidth)
-        context?.setStrokeColor(red: red, green: green, blue: blue, alpha: 1)
+        context?.setStrokeColor(red: red, green: green, blue: blue, alpha: opacity)
         context?.setBlendMode(CGBlendMode.normal)
+        
         context?.strokePath()
         
-        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        secondImage.image = UIGraphicsGetImageFromCurrentImageContext()
+        secondImage.alpha = opacity
         UIGraphicsEndImageContext()
     }
     
@@ -126,4 +145,45 @@ class ViewController: UIViewController {
     @IBAction func resetButton(_ sender: Any) {
         imageView.image = nil
     }
+    
+    //NEW CODE
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let settingsVC = segue.destination as! SettingsViewController
+        settingsVC.delegate = self
+        settingsVC.brushWidth = brushWidth
+        settingsVC.red = red
+        settingsVC.green = green
+        settingsVC.blue = blue
+        settingsVC.opacity = opacity
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+//NEW CODE
+extension ViewController: SettingsViewControllerDelegate {
+    
+    func settingsViewcontrollerFinihsed(_ settingsViewController: SettingsViewController) {
+        
+        self.brushWidth = settingsViewController.brushWidth
+        self.red = settingsViewController.red
+        self.green = settingsViewController.green
+        self.blue = settingsViewController.blue
+        self.opacity = settingsViewController.opacity
+        
+        //self.brushSize()
+        
+    }
+    
+    
 }
