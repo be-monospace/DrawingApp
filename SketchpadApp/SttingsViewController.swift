@@ -82,7 +82,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func exitView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        self.delegate?.settingsViewcontrollerFinihsed(self)
+         //self.delegate?.settingsViewcontrollerFinihsed(self)
     }
     
     @IBAction func brushSize(_ sender: Any) {
@@ -122,7 +122,6 @@ class SettingsViewController: UIViewController {
     
     // UPDATE THE PREVIEW WITH SLIDER VALUES
     func updatePreview() {
-        
         UIGraphicsBeginImageContext(imageView.frame.size)
         let context = UIGraphicsGetCurrentContext()
         

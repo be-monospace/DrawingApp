@@ -258,7 +258,7 @@
                                 <rect key="frame" x="25" y="69" width="22.666666666666671" height="22"/>
                                 <state key="normal" image="arrowLeft"/>
                                 <connections>
-                                    <action selector="exitView:" destination="U3O-IP-NLg" eventType="touchUpInside" id="ekd-Jy-UsS"/>
+                                    <action selector="exitView:" destination="U3O-IP-NLg" eventType="touchUpInside" id="ZLo-4w-tiX"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xL7-Nl-4UN">

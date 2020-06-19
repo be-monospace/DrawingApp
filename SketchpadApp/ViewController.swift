@@ -148,17 +148,17 @@ class ViewController: UIViewController {
     
     //NEW CODE
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let settingsVC = segue.destination as! SettingsViewController
-        settingsVC.delegate = self
-        settingsVC.brushWidth = brushWidth
-        settingsVC.red = red
-        settingsVC.green = green
-        settingsVC.blue = blue
-        settingsVC.opacity = opacity
-        
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        let settingsVC = segue.destination as! SettingsViewController
+//        settingsVC.delegate = self
+//        settingsVC.brushWidth = brushWidth
+//        settingsVC.red = red
+//        settingsVC.green = green
+//        settingsVC.blue = blue
+//        settingsVC.opacity = opacity
+//        
+//    }
     
     
     

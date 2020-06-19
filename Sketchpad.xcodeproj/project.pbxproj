@@ -58,11 +58,11 @@
 			children = (
 				AE30722324990BB900646861 /* AppDelegate.swift */,
 				AE30722524990BB900646861 /* ViewController.swift */,
+				AE307238249942F900646861 /* SttingsViewController.swift */,
 				AE30722724990BBA00646861 /* Main.storyboard */,
 				AE3072362499118100646861 /* Assets.xcassets */,
 				AE30722C24990C3F00646861 /* LaunchScreen.storyboard */,
 				AE30722F24990C3F00646861 /* Info.plist */,
-				AE307238249942F900646861 /* SttingsViewController.swift */,
 			);
 			path = SketchpadApp;
 			sourceTree = "<group>";
